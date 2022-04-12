@@ -139,10 +139,11 @@ class MessageStream extends StatelessWidget {
             messageBubbles.add(messageWidget);
           }
           return Expanded(
-            child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: ListView(children: messageBubbles)),
+            child: ListView(
+              reverse: true,
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                children: messageBubbles,
+            ),
           );
         });
   }
@@ -179,7 +180,7 @@ class MessageBubble extends StatelessWidget {
               color: isMe ? Colors.lightBlue : Colors.white,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
                 child: Text(
                   text,
                   style: TextStyle(
